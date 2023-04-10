@@ -1,0 +1,41 @@
+package org.excel.owndamage;
+
+import java.util.ArrayList;
+
+public class ExcelUtils {
+    
+        
+        static ReadExcel reader;
+        
+        public static  ArrayList<Object[]> getDataFromexcel() {
+            ArrayList<Object[]> myData=new ArrayList<Object[]>();
+            try {
+            
+                reader=new ReadExcel("C:\\Users\\a1354\\eclipse-workspace\\New_SGI\\Excel\\Sgi.xlsx");
+                
+                    
+                
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            
+            for (int rowNum =2 ; rowNum <= reader.getRowCount("Sheet1");rowNum++ ) {
+                String Car_no = reader.getCellData("Sheet1", "Car_no", rowNum);             
+                String Mob_no = reader.getCellData("Sheet1", "Mob_no", rowNum);
+                String OTP_1 = reader.getCellData("Sheet1", "OTP_1", rowNum);
+                String Vehicle_number = reader.getCellData("Sheet1", "Vehicle_number", rowNum);
+                String Make_and_model  = reader.getCellData("Sheet1", "Make_and_model", rowNum);
+                String Registration_date  = reader.getCellData("Sheet1", "Registration_date", rowNum);
+                String Select_registration  = reader.getCellData("Sheet1", "Select_registration", rowNum);
+                String city_of_registration  = reader.getCellData("Sheet1", "city_of_registration", rowNum);
+
+                
+                Object ob[]= {Car_no,Mob_no,OTP_1,Vehicle_number,Make_and_model,Registration_date,Select_registration,city_of_registration};       
+                myData.add(ob);
+            }
+            return myData;
+            
+        }
+
+    }

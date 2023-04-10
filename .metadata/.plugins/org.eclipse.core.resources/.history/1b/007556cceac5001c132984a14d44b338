@@ -1,0 +1,35 @@
+package org.excel.owndamage;
+
+import java.util.ArrayList;
+
+public class ExcelUtils {
+    
+        
+        static ReadExcel reader;
+        
+        public static  ArrayList<Object[]> getDataFromexcel() {
+            ArrayList<Object[]> myData=new ArrayList<Object[]>();
+            try {
+            
+                reader=new ReadExcel("C:\\Users\\a1354\\Documents.xlsx");
+                
+                    
+                
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            
+            for (int rowNum =2 ; rowNum <= reader.getRowCount("Sheet1");rowNum++ ) {
+                String Username = reader.getCellData("Sheet1", "Car no.", rowNum);             
+                String password = reader.getCellData("Sheet1", "Mob no.", rowNum);
+               
+                
+                Object ob[]= {Username,password};       
+                myData.add(ob);
+            }
+            return myData;
+            
+        }
+
+    }

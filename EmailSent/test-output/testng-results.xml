@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="15281" started-at="2022-03-17T10:15:22Z" finished-at="2022-03-17T10:15:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="15281" started-at="2022-03-17T10:15:22Z" finished-at="2022-03-17T10:15:37Z">
+      <class name="org.execution.RunExecution">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:org.execution.RunExecution@6d4b1c02]" name="startTest" is-config="true" duration-ms="7095" started-at="2022-03-17T15:45:22Z" finished-at="2022-03-17T15:45:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="f()[pri:0, instance:org.execution.RunExecution@6d4b1c02]" name="f" duration-ms="8150" started-at="2022-03-17T15:45:29Z" finished-at="2022-03-17T15:45:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- org.execution.RunExecution -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

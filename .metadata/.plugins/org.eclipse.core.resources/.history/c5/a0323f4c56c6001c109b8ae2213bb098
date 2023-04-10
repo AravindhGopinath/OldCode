@@ -1,0 +1,10 @@
+package org.run;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+public class AllureListener implements ITestListener {
+
+
+}

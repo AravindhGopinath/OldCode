@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/a1354/eclipse-workspace/Shriam_General_Insurance/I_Know_Reg_Two_Wheeler_Flow"><classes><class name="org.runner.Launch_Class"><methods><include name="execution"/></methods></class></classes></test></suite>

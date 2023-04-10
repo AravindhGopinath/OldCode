@@ -1,0 +1,8 @@
+package org.run;
+
+public class Snippet {
+	WebDriver driver = lb.launchBrowser("chrome");
+	    	
+	    	lb.loadUrl("https://experience.novactech.in/digital/sgi/fwl/login.html");
+}
+

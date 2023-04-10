@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="org.run.GL_Run">
+        <methods>
+          <include name="checkBoxSelect"/>
+          <include name="tandcbutton"/>
+          <include name="editBankAc"/>
+          <include name="startTest"/>
+          <include name="sliderAction"/>
+          <include name="closeBrowser"/>
+          <include name="reortbtn"/>
+          <include name="btnavail"/>
+          <include name="disabled"/>
+          <include name="loanChangeClick"/>
+          <include name="verifybtnDisabled"/>
+          <include name="acceptbtn"/>
+          <include name="btnClick"/>
+          <include name="otpValidation"/>
+          <include name="validOtpValidation"/>
+        </methods>
+      </class> <!-- org.run.GL_Run -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

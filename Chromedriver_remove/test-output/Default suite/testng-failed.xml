@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="org.webpage.Execution_GL">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="startTest"/>
+          <include name="mobileValidation2"/>
+          <include name="checkbox"/>
+          <include name="panNo"/>
+          <include name="panNo1"/>
+          <include name="loanAmt2"/>
+          <include name="MobileValidation1"/>
+          <include name="invalidEmailValidatio"/>
+          <include name="loanAmt1"/>
+          <include name="loanAmt"/>
+        </methods>
+      </class> <!-- org.webpage.Execution_GL -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

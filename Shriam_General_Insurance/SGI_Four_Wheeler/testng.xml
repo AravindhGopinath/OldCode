@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/a1354/eclipse-workspace/Shriam_General_Insurance/SGI_Four_Wheeler/src/main/java/org/runclass/All_In_One.java">
+        <classes>
+            <class name="org.runclass.All_In_One">
+                <methods>
+                    <include name="row1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

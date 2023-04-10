@@ -1,0 +1,74 @@
+package org.run;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.base.BaseClass;
+import org.excel.owndamage.ExcelUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.webelements.Locators;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class Old_Vehicle   {
+
+
+	static ExtentTest test;
+	static ExtentReports report;
+	
+
+	@DataProvider
+	public Iterator<Object[]> getTestData() {
+
+		ArrayList<Object[]> testData = ExcelUtils.getDataFromexcel();
+		return testData.iterator();
+
+	}
+
+	@Test(dataProvider = "getTestData")
+	private void row1(String Car_no, String Mob_no, String OTP_1, String Vehicle_number,
+			String Make_and_model, String Registration_date, String Select_registration, String city_of_registration, String Enter_company_name, String Enter_GST_number) throws InterruptedException, IOException {
+
+		BaseClass lb = new BaseClass();
+		 
+		WebDriver driver = lb.launchBrowser("chrome");
+		
+		lb.loadUrl("https://experience.novactech.in/digital/sgi/fwl/login.html");
+		
+		Old_Vehicle_Internal.testCase(Car_no, Mob_no, OTP_1,Vehicle_number,Make_and_model,Registration_date,Select_registration,city_of_registration,Enter_company_name,Enter_GST_number);
+		
+		Thread.sleep(5000);
+		
+//		lb.closeBrowser();
+		
+	}
+
+//	@AfterTest
+//	private void closeBrowser() {
+//		
+//		BaseClass lb = new BaseClass();
+//		
+//		Locators ls  =new Locators();
+//		
+//		WebDriver driver = new ChromeDriver();
+//		
+//		WebElement findElement = driver.findElement(By.name("sdjgsj"));
+//		
+//		findElement.sendKeys("Fail");
+//		
+//		System.out.println("Fail");
+//		
+//	}
+	
+}
+

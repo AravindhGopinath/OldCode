@@ -1,0 +1,135 @@
+package org.webpage;
+
+import java.io.IOException;
+
+import org.libglobal.LibGlobal;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.run.gl.LoginPage;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+public class Execution_GL  {
+	@BeforeTest
+	public void launchBrowser() {
+		ExtentReports extentreport;
+		ExtentHtmlReporter htmlreport;
+		ExtentTest test;
+
+		extentreport = new ExtentReports();
+
+		htmlreport = new ExtentHtmlReporter("Reporter.html");
+
+		extentreport.attachReporter(htmlreport);
+
+		extentreport.createTest("Gold loan Flow");
+
+		extentreport.flush();
+
+		LibGlobal libglobal = new LibGlobal();
+		
+		WebDriver launchBrowser = libglobal.launchBrowser("chrome");
+
+		libglobal.loadUrl("https://uat.shriramcity.in/");
+
+	}
+
+	@Test
+	public void f() throws IOException, InterruptedException {
+		Reporter.log("Aravindh", true);
+
+		LibGlobal libglobal = new LibGlobal();
+		LoginPage loginpage = new LoginPage();
+
+		WebElement noticeCloseButton = loginpage.getNoticeCloseButton();
+		libglobal.Click(noticeCloseButton);
+
+		WebElement applynow = loginpage.getApplynow();
+		libglobal.Click(applynow);
+
+		WebElement clickbutton = loginpage.getClickbutton();
+		libglobal.Click(clickbutton);
+		Thread.sleep(2000);
+		WebElement finalapply = loginpage.getFinalapply();
+		libglobal.btnClick(finalapply);
+
+		Thread.sleep(2000);
+
+		libglobal.failScreenCapture();
+
+		Thread.sleep(2000);
+		WebElement applicantname = loginpage.getApplicantname();
+		libglobal.setText(applicantname, libglobal.getDataFromExcel("GL_Data", 0, 0));
+
+		Thread.sleep(1000);
+		WebElement mobileno = loginpage.getMobileno();
+		libglobal.doubleClick(mobileno);
+		libglobal.setText(mobileno, libglobal.getDataFromExcel("GL_Data", 1, 0));
+
+		WebElement mobilenoError = loginpage.getMobilenoError();
+		String Expected = mobilenoError.getText();
+		// System.out.println(Expected);
+
+		if (Expected.isEmpty()) {
+
+			libglobal.updateDataInExcel("GL_Data", 1, 1, "Mobile Case is Passed");
+			System.out.println("Test Case is Passed");
+
+		} else {
+
+			libglobal.updateDataInExcel("GL_Data", 1, 1, "Mobile Case is Failed");
+			System.out.println("Test Case is Failed");
+
+		}
+
+		mobileno.clear();
+		WebElement mobileno1 = loginpage.getMobileno();
+		libglobal.doubleClick(mobileno1);
+		libglobal.setText(mobileno1, libglobal.getDataFromExcel("GL_Data", 2, 0));
+		
+		WebElement mobilenoError1 = loginpage.getMobilenoError();
+		String Expected1 = mobilenoError1.getText();
+		// System.out.println(Expected);
+
+		if (Expected1.isEmpty()) {
+			
+
+			libglobal.updateDataInExcel("GL_Data", 2, 2, "Mobile Case is Passed");
+			System.out.println("Test Case is Passed");
+
+		} else {
+
+			libglobal.updateDataInExcel("GL_Data", 2, 2, "Mobile Case is Failed");
+			System.out.println("Test Case is Failed");
+
+		}
+ 
+		
+		
+		// WebElement email = loginpage.getEmail();
+		// libglobal.setText(email, libglobal.getDataFromExcel("GL_Data", 2, 0));
+		
+		//
+		// WebElement dob = loginpage.getDOB();
+		// libglobal.Click(dob);
+		
+		// WebElement yeardatepicker = loginpage.getYeardatepicker();
+		// libglobal.selectOptionByText(yeardatepicker, "1999");
+		
+		// WebElement monthdatepicker = loginpage.getMonthdatepicker();
+		// libglobal.selectOptionByText(monthdatepicker, "Feb");
+		
+		// WebElement datedatepicker = loginpage.getDatedatepicker();
+		// libglobal.btnClick(datedatepicker);
+
+		// Sheet sheet = workbook.getSheetAt(0);
+		// Cell cell2Update = sheet.getRow(1).getCell(3);
+		// cell2Update.setCellValue(49);
+
+	}
+}

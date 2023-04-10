@@ -1,0 +1,48 @@
+package org.run;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.base.BaseClass;
+import org.excel.owndamage.ExcelUtils;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class Old_Vehicle {
+
+	static ExtentTest test;
+    static ExtentReports report;
+    
+    @BeforeTest
+    	
+    public void startTest() {
+    	
+    	BaseClass lb =new BaseClass();
+    	
+    	WebDriver driver = lb.launchBrowser("chrome");
+    	
+    	lb.loadUrl("https://experience.novactech.in/digital/sgi/fwl/login.html");
+    	
+   }
+    
+    @DataProvider
+    public Iterator<Object[]> getTestData() {
+        ArrayList<Object[]> testData = ExcelUtils.getDataFromexcel();
+        return testData.iterator();
+
+    }
+    
+    @Test(dataProvider="getTestData")
+    
+    private void tc1() {
+    	
+    	
+	}
+    
+    
+}
